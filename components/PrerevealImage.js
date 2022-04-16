@@ -5,7 +5,7 @@ import { useForm, Controller } from "react-hook-form";
 import Moralis from 'moralis'
 import * as yup from 'yup';
 import { yupResolver } from "@hookform/resolvers/yup"; 
-
+import {AsyncSelectCustomStyles} from './AsyncSelectStyle'
 
 
 const maxFileSize = 1024 * 1024; // 1MB for images
@@ -98,8 +98,7 @@ function PrerevealImage() {
 
         <div className={styles.gridContainer}> 
 
-
-          <div className={styles.gridItem}></div>
+          <div className={styles.gridItem}> Select Collection:  </div> 
           <div className={styles.gridItem}> 
             <Controller
               name="collectionNameController"
@@ -110,6 +109,7 @@ function PrerevealImage() {
               render={({ field }) => (
                 <AsyncSelect
                   {...field}
+                  styles={AsyncSelectCustomStyles}
                   id="CollectionName"
                   name='CollectionName'
                   isClearable

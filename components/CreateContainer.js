@@ -3,9 +3,9 @@ import styles from "../styles/CreateContainer.module.css"
 
 function CreateContainer({ children }) {
   return (
-    <div className={styles.Container}>       
+    <main className={styles.Container}>       
         {children}
-    </div>
+    </main>
   )
 }
 

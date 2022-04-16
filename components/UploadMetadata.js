@@ -5,6 +5,7 @@ import { useForm, Controller } from "react-hook-form";
 import Moralis from 'moralis';
 import * as yup from 'yup';
 import { yupResolver } from "@hookform/resolvers/yup"; 
+import {AsyncSelectCustomStyles} from './AsyncSelectStyle'
 
 
 const maxFileSize = 1024 * 1024; // 10MB for json
@@ -93,6 +94,7 @@ function UploadImages() {
 
       <form id="formToSubmit" method="post" encType="multipart/form-data"  onSubmit={handleSubmit(onSubmit)}>              
 
+        <div className={styles.gridItem}> Select Collection:  </div> 
         <Controller
           name="collectionNameController"
           control={control}
@@ -102,6 +104,7 @@ function UploadImages() {
           render={({ field }) => (
             <AsyncSelect
               {...field}
+              styles={AsyncSelectCustomStyles}
               id="CollectionName"
               name='CollectionName'
               isClearable

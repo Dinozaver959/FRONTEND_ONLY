@@ -3,6 +3,7 @@ import styles from "../styles/CreateContent.module.css";
 import AsyncSelect from 'react-select/async'
 import { useForm, Controller  } from "react-hook-form";
 import Moralis from 'moralis';
+import {AsyncSelectCustomStyles} from './AsyncSelectStyle'
 
 function ConfigureSmartContract() {
 
@@ -109,7 +110,7 @@ function ConfigureSmartContract() {
 
         <div className={styles.gridContainer}> 
 
-        <div className={styles.gridItem}></div>
+          <div className={styles.gridItem}> Select Collection:  </div> 
           <div className={styles.gridItem}>
           <Controller
             name="collectionNameController"
@@ -119,7 +120,8 @@ function ConfigureSmartContract() {
             value={selectedValue}
             render={({ field }) => (
               <AsyncSelect
-              {...field}
+                {...field}
+                styles={AsyncSelectCustomStyles}
                 id="CollectionName"
                 name="CollectionName"
                 isClearable

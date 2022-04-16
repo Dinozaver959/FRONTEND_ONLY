@@ -1,100 +1,77 @@
 
-var Moralis = require("moralis/node");
-
-const serverUrl = "https://p2r5bzcvt2aq.usemoralis.com:2053/server";
-const appId = "mCUbGlwPmuitdPxm5K3mtjhoGL1ENmyMIgffO5U7";
-Moralis.start({ serverUrl, appId });
-
 
 export async function GetCollectionNames(id) {
-    const params =  { id: id };
-    return Moralis.Cloud.run("GetCollectionNames", params);
+    return {};
 }
 
 export async function GetNotDeployedCollectionNames(id){
-    const params =  { id: id };
-    return Moralis.Cloud.run("GetNotDeployedCollectionNames", params);
+    return {};
 }
 
 export async function GetConfiguredNotDeployedCollectionNames(id){
-    const params =  { id: id };
-    return Moralis.Cloud.run("GetNotDeployedButReadyCollectionNames", params);
+    return {};
 }
 
 export async function GetDeployedCollectionNames(id){
-    const params =  { id: id };
-    return Moralis.Cloud.run("GetDeployedCollectionNames", params);
+    return {};
 }
 
 
 export async function GetContractAddress(collectionName) {
-    const params =  { collectionName: collectionName};
-    return Moralis.Cloud.run("GetContractAddress", params);
+    return {};
 }
 
 
 export async function IsCollectionRevealed(collectionName) {
-    const params =  { collectionName: collectionName };
-    return await Moralis.Cloud.run("IsCollectionRevealed", params);
+    return {};
 }
 
 export async function DoesCollectionExist(collectionName){
-    const params =  { collectionName: collectionName };
-    return await Moralis.Cloud.run("DoesCollectionExist", params);
+    return {};
 }
 
 export async function GetCollectionSize(collectionName){
-    const params =  { collectionName: collectionName };
-    return await Moralis.Cloud.run("GetCollectionSize", params);
+    return {};
 }
 
 export async function GetCollectionLength(collectionName){
-    const params =  { collectionName: collectionName };
-    return await Moralis.Cloud.run("GetCollectionLength", params);
+    return {};
 }
 
 export async function ConstructMetadataLegit(collectionName, id){
-    const params =  { collectionName: collectionName, id : id };
-    return await Moralis.Cloud.run("ConstructMetadataLegit", params);
+    return {};
 }
 
 export async function ConstructMetadataPreReveal(collectionName, id){
-    const params =  { collectionName: collectionName, id : id };
-    return await Moralis.Cloud.run("ConstructMetadataPreReveal", params);
+    return {};
 }
   
 
 export async function CheckIfUserOwnsCollection(collectionName, userAccount){
-    const params =  { collectionName: collectionName, userAccount : userAccount };
-    return await Moralis.Cloud.run("CheckIfUserOwnsCollection", params);
+    return {};
 }
 
 // similar to below, but it collection data from all the collections owned by an owner
 export async function GetCollectionsDetailsByOwner(userAccount){
-    const params =  { userAccount : userAccount };
-    return await Moralis.Cloud.run("GetCollectionsDetailsByOwner", params);
+    return {};
 }
 
 // similar to above but more efficient -> gets only data for 1 particular collection
 export async function GetCollectionDetailsByCollectionName(collectionName){
-    const params =  { collectionName : collectionName };
-    return await Moralis.Cloud.run("GetCollectionDetailsByCollectionName", params);
+    return {};
 }
 
 
 
 export async function GetCollectionDescription(collectionName){
-    const params =  { collectionName: collectionName };
-    return await Moralis.Cloud.run("GetCollectionDescription", params);
+    return {};
 }
 
 
 export async function GetImageURL(collectionName, id){
-    const params =  { collectionName: collectionName, id: id };
-    return await Moralis.Cloud.run("GetImageURL", params);
+    return {};
 }
 
 export async function GetPrerevealImageURL(collectionName){
-    const params =  { collectionName: collectionName };
-    return await Moralis.Cloud.run("GetPrerevealImageURL", params);
+    return {};
 }

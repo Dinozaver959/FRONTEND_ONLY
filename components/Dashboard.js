@@ -64,7 +64,7 @@ function  Dashboard() {
       {  
         (data && data[0]) ? (
           <>
-            <div className="container">
+            <div className={styles.container}>
               <table>
                 <thead>
                 <tr>

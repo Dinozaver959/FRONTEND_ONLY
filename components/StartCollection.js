@@ -79,7 +79,7 @@ function StartCollection() {
         <div className={styles.gridContainer}> 
 
           <div className={styles.gridItem}> local name for collection:  </div>
-          <input className={styles.gridItem} id="CollectionName" {...register('CollectionName', { required: true, minLength: 4, maxLength: 24, pattern: /^[a-z][a-z0-9_-]*/i })} ></input>
+          <input className={styles.gridItem} id="CollectionName" type="text" {...register('CollectionName', { required: true, minLength: 4, maxLength: 24, pattern: /^[a-z][a-z0-9_-]*/i })} ></input>
           <div className={styles.gridItem}> 
           {/*
           {errors.CollectionName && errors.CollectionName.type === "required" && <span><p>required</p></span> }

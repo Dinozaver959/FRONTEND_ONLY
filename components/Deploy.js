@@ -4,6 +4,7 @@ import AsyncSelect from 'react-select/async'
 import {DeployContract_Moralis} from "../JS/local_web3_Moralis";
 import { useForm, Controller  } from "react-hook-form";
 import Moralis from 'moralis';
+import {AsyncSelectCustomStyles} from './AsyncSelectStyle'
 
 function  Deploy() {
 
@@ -78,6 +79,7 @@ function  Deploy() {
 
       <form id="formToSubmit" method="post" encType="multipart/form-data"  onSubmit={handleSubmit(onSubmit)}>              
 
+        <div className={styles.gridItem}> Select Collection:  </div> 
         <Controller
           name="collectionNameController"
           control={control}
@@ -87,6 +89,7 @@ function  Deploy() {
           render={({ field }) => (
             <AsyncSelect
               {...field}
+              styles={AsyncSelectCustomStyles}
               id="CollectionName"
               name='CollectionName'
               isClearable

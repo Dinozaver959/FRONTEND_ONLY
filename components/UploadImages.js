@@ -5,7 +5,7 @@ import AsyncSelect from 'react-select/async';
 import { useForm, Controller } from "react-hook-form";
 import Moralis from 'moralis';
 import UploadImagesBulk from './UploadImagesBulkComponent';
-
+import {AsyncSelectCustomStyles} from './AsyncSelectStyle'
 
 
 function UploadImages() {
@@ -51,6 +51,7 @@ function UploadImages() {
     <> 
       <div className={styles.createTitle}>Upload Images for your Collection</div><br></br>
 
+        <div className={styles.gridItem}> Select Collection:  </div> 
         <Controller
           name="collectionNameController"
           control={control}
@@ -60,6 +61,7 @@ function UploadImages() {
           render={({ field }) => (
             <AsyncSelect
               {...field}
+              styles={AsyncSelectCustomStyles}
               id="CollectionName"
               name='CollectionName'
               isClearable

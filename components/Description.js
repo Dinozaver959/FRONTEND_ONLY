@@ -3,6 +3,9 @@ import styles from "../styles/CreateContent.module.css";
 import AsyncSelect from 'react-select/async'
 import { useForm, Controller  } from "react-hook-form";
 import Moralis from 'moralis';
+import {AsyncSelectCustomStyles} from './AsyncSelectStyle'
+//import SelectCollectionName from './SelectCollectionName';
+
 
 function Description() {
 
@@ -76,35 +79,36 @@ function Description() {
 
         <div className={styles.gridContainer}> 
 
-        <div className={styles.gridItem}></div>
+          <div className={styles.gridItem}> Select Collection:  </div> 
           <div className={styles.gridItem}>
-          <Controller
-            name="collectionNameController"
-            control={control}
-            rules={{ required: true }}
+            <Controller
+              name="collectionNameController"
+              control={control}
+              rules={{ required: true }}
 
-            value={selectedValue}
-            render={({ field }) => (
-              <AsyncSelect
-              {...field}
-                id="CollectionName"
-                name="CollectionName"
-                isClearable
-                defaultOptions
-                getOptionLabel={e => e.name}
-                getOptionValue={e => e.name}
-                loadOptions={loadOptions}
-                onInputChange={handleInputChange}
-              />   
-            )}
-          />  
+              value={selectedValue}
+              render={({ field }) => (
+                <AsyncSelect
+                  {...field}
+                  styles={AsyncSelectCustomStyles}
+                  id="CollectionName"
+                  name="CollectionName"
+                  isClearable
+                  defaultOptions
+                  getOptionLabel={e => e.name}
+                  getOptionValue={e => e.name}
+                  loadOptions={loadOptions}
+                  onInputChange={handleInputChange}
+                />   
+              )}
+            />  
           </div>
           <div className={styles.gridItem}>
           {errors.collectionNameController && errors.collectionNameController.type === "required" && <span> required</span> }
           </div>
 
           <div className={styles.gridItem}> Collection&apos;s description:  </div> 
-          <input className={styles.gridItem} id="CollectionDescription" width="200" height="80" {...register('CollectionDescription', { required: true, minLength: 4, maxLength: 240})} ></input>
+          <input className={styles.gridItem} id="CollectionDescription" type="text" width="200" height="80" {...register('CollectionDescription', { required: true, minLength: 4, maxLength: 240})} ></input>
           <div className={styles.gridItem}> 
             {errors.CollectionDescription && errors.CollectionDescription.type === "required" && <span><p>required</p></span> }
             {errors.CollectionDescription && errors.CollectionDescription.type === "maxLength" && <span><p>Max length is 240 chars</p></span> }

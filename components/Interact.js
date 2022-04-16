@@ -6,6 +6,7 @@ import AsyncSelect from 'react-select/async'
 import {CheckTotalSupply_Moralis, Mint_Moralis, CheckContractName_Moralis, CheckContractSymbol_Moralis, CheckSaleActive_Moralis, CheckOwner_Moralis,
   SetSaleActive_Moralis, CheckTokenURI_Moralis, UpdateBaseURI_Moralis, CheckIfRevealed_Moralis, Reveal_Moralis, Withdraw_Moralis, SetPlatformRoyalty_Moralis} from "../JS/local_web3_Moralis";
 import Moralis from 'moralis';
+import {AsyncSelectCustomStyles} from './AsyncSelectStyle'
 
 function  Interact() {
 
@@ -55,8 +56,9 @@ function  Interact() {
 
       <div className={stylesContainer.FormLikeStyle_TEMP}>
 
-
+        <div className={styles.gridItem}> Select Collection:  </div> 
         <AsyncSelect
+          styles={AsyncSelectCustomStyles}
           id="CollectionName_Async"
           cacheOptions
           defaultOptions
